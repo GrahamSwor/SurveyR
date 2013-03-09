@@ -1,6 +1,6 @@
 namespace SurveyR.Core
 {
-    public class User
+    public class User : EntityBase
     {
 
     }

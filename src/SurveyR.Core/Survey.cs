@@ -2,7 +2,7 @@
 
 namespace SurveyR.Core
 {
-    public class Survey
+    public class Survey : EntityBase
     {
         public Survey()
         {
@@ -10,16 +10,16 @@ namespace SurveyR.Core
             Responses = new List<SurveyResponse>();
         }
 
-        public void RegisterParticipant(User user)
+        public virtual void RegisterParticipant(User user)
         {
             Participants.Add(user);
         }
 
-        public IList<User> Participants { get; set; }
+        public virtual IList<User> Participants { get; set; }
 
-        public IList<SurveyResponse> Responses { get; set; }
+        public virtual IList<SurveyResponse> Responses { get; set; }
 
-        public void RecordResponse(User participant, Answer answer)
+        public virtual void RecordResponse(User participant, Answer answer)
         {
             Responses.Add(new SurveyResponse(participant, answer));
         }

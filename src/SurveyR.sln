@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D57C71
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyR.Infrastructure", "SurveyR.Infrastructure\SurveyR.Infrastructure.csproj", "{CAA2C168-0767-4856-8A27-27C8CD8034C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{94850494-1C14-4701-9472-BA4667DD98FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94850494-1C14-4701-9472-BA4667DD98FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94850494-1C14-4701-9472-BA4667DD98FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAA2C168-0767-4856-8A27-27C8CD8034C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA2C168-0767-4856-8A27-27C8CD8034C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA2C168-0767-4856-8A27-27C8CD8034C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA2C168-0767-4856-8A27-27C8CD8034C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

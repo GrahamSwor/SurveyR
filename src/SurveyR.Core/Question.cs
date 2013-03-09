@@ -1,7 +1,7 @@
 ﻿namespace SurveyR.Core
 {
-    public class Question
+    public class Question : EntityBase
     {
-        public string Label { get; set; }
+        public virtual string Label { get; set; }
     }
 }
