@@ -1,3 +1,5 @@
+using NHibernate;
+
 namespace SurveyR.Tests
 {
     public class UnitOfWorkFactory : IUnitOfWorkFactory
@@ -6,5 +8,7 @@ namespace SurveyR.Tests
         {
             throw new System.NotImplementedException();
         }
+
+        public ISession CurrentSession { get; set; }
     }
 }

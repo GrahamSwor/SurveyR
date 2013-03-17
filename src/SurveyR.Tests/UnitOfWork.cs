@@ -1,10 +1,11 @@
 using System;
+using NHibernate;
 
 namespace SurveyR.Tests
 {
     public class UnitOfWork
     {
-        private static IUnitOfWorkFactory _factory = new UnitOfWorkFactory();
+        private static readonly IUnitOfWorkFactory _factory = new UnitOfWorkFactory();
         private static IUnitOfWork _innerUnitOfWork;
 
         public static IUnitOfWork Start()
@@ -39,6 +40,12 @@ namespace SurveyR.Tests
             {
                 return _innerUnitOfWork != null;
             }
+        }
+
+        public static ISession CurrentSession
+        {
+            get { return _factory.CurrentSession; }
+            internal set { _factory.CurrentSession = value; }
         }
     }
 }

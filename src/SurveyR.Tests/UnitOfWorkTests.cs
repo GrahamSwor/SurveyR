@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using Moq;
+using NHibernate;
 using NUnit.Framework;
 using Should;
 
@@ -12,20 +13,23 @@ namespace SurveyR.Tests
 
         private Mock<IUnitOfWorkFactory> _mockFactory = new Mock<IUnitOfWorkFactory>();
         private Mock<IUnitOfWork> _mockUnitOfWork = new Mock<IUnitOfWork>();
+        private Mock<ISession> _mockSession = new Mock<ISession>();
         private IUnitOfWorkFactory _factory;
         private IUnitOfWork _unitOfWork;
-
+        private ISession _session;
 
         [SetUp]
         public void SetUp()
         {
             _factory = _mockFactory.Object;
             _unitOfWork = _mockUnitOfWork.Object;
+            _session = _mockSession.Object;
 
             var fieldInfo = typeof(UnitOfWork).GetField("_factory", BindingFlags.Static | BindingFlags.NonPublic);
             fieldInfo.SetValue(null, _factory);
 
             _mockFactory.Setup(x => x.Create()).Returns(_unitOfWork);
+            _mockFactory.Setup(x => x.CurrentSession).Returns(_session);
         }
 
         [TearDown]
@@ -71,6 +75,16 @@ namespace SurveyR.Tests
             UnitOfWork.IsStarted.ShouldEqual(false);
             UnitOfWork.Start();
             UnitOfWork.IsStarted.ShouldEqual(true);
+        }
+
+        [Test]
+        public void should_get_current_ISession_if_started()
+        {
+            using(UnitOfWork.Start())
+            {
+                ISession session = UnitOfWork.CurrentSession;
+                session.ShouldNotBeNull();
+            }
         }
     }
 }
