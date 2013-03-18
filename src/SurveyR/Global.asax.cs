@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using SurveyR.Infrastructure;
 using SurveyR.MVC.App_Start;
 
 namespace SurveyR.MVC

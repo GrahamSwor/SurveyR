@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 
-namespace Headspring
+namespace SurveyR.MVC.Headspring
 {
     [Serializable]
     [DebuggerDisplay("{DisplayName} - {Value}")]

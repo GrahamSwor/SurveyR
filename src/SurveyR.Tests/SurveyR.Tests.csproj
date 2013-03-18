@@ -60,12 +60,8 @@
   <ItemGroup>
     <Compile Include="CoreTests\SurveyConfgurationTests.cs" />
     <Compile Include="CoreTests\SurveyTests.cs" />
-    <Compile Include="IUnitOfWork.cs" />
-    <Compile Include="IUnitOfWorkFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitOfWork.cs" />
-    <Compile Include="UnitOfWorkFactory.cs" />
-    <Compile Include="UnitOfWorkTests.cs" />
+    <Compile Include="Infrastructure\UnitOfWorkTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -74,6 +70,10 @@
     <ProjectReference Include="..\SurveyR.Core\SurveyR.Core.csproj">
       <Project>{94850494-1c14-4701-9472-ba4667dd98fb}</Project>
       <Name>SurveyR.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SurveyR.Infrastructure\SurveyR.Infrastructure.csproj">
+      <Project>{caa2c168-0767-4856-8a27-27c8cd8034c5}</Project>
+      <Name>SurveyR.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\SurveyR\SurveyR.MVC.csproj">
       <Project>{82678fbb-5a7b-4ea8-8605-9588c0ad9270}</Project>

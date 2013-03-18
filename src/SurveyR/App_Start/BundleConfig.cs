@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace SurveyR
+namespace SurveyR.MVC.App_Start
 {
     public class BundleConfig
     {
